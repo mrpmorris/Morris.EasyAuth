@@ -5,7 +5,7 @@ namespace Morris.BasicAuth.Blazor.Web.Client;
 
 public static class IServiceCollectionExtensions
 {
-	public static IServiceCollection UseBasicAuth(
+	public static IServiceCollection AddBasicAuth(
 		this IServiceCollection services,
 		string? baseAddress,
 		Action<BasicAuthBuilder>? builder = null)
