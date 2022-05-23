@@ -25,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{AFF6160A-A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morris.BasicAuth", "Lib\Morris.BasicAuth\Morris.BasicAuth.csproj", "{DC168D3B-671D-4CC0-BA51-8C089C695672}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morris.BasicAuth.Blazor.Web.Client", "Lib\Morris.BasicAuth.Blazor.Web.Client\Morris.BasicAuth.Blazor.Web.Client.csproj", "{9D4C75B9-8C7B-485B-871C-F48CEFD8E8CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morris.BasicAuth.Blazor.Web.Server", "Lib\Morris.BasicAuth.Blazor.Web.Server\Morris.BasicAuth.Blazor.Web.Server.csproj", "{303D8075-7147-438F-982D-0D4FEB3C8B55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,9 +39,22 @@ Global
 		{DC168D3B-671D-4CC0-BA51-8C089C695672}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC168D3B-671D-4CC0-BA51-8C089C695672}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC168D3B-671D-4CC0-BA51-8C089C695672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4C75B9-8C7B-485B-871C-F48CEFD8E8CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4C75B9-8C7B-485B-871C-F48CEFD8E8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D4C75B9-8C7B-485B-871C-F48CEFD8E8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D4C75B9-8C7B-485B-871C-F48CEFD8E8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{303D8075-7147-438F-982D-0D4FEB3C8B55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{303D8075-7147-438F-982D-0D4FEB3C8B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{303D8075-7147-438F-982D-0D4FEB3C8B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{303D8075-7147-438F-982D-0D4FEB3C8B55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC168D3B-671D-4CC0-BA51-8C089C695672} = {7302A8A5-30B2-413A-83DB-5CAF2CBF91CD}
+		{9D4C75B9-8C7B-485B-871C-F48CEFD8E8CD} = {7302A8A5-30B2-413A-83DB-5CAF2CBF91CD}
+		{303D8075-7147-438F-982D-0D4FEB3C8B55} = {7302A8A5-30B2-413A-83DB-5CAF2CBF91CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3257C26E-E768-46E8-B0CC-62F3B6E19E4D}
