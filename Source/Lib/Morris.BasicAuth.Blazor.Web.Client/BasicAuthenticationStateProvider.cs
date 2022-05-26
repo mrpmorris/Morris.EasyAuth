@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Morris.BasicAuth.Blazor.Web.Client;
 
-public class BasicAuthenticationStateProvider : AuthenticationStateProvider
+internal class BasicAuthenticationStateProvider : AuthenticationStateProvider
 {
 	private static readonly AuthenticationState Anonymous;
 	private readonly ClientAuthOptions AuthOptions;

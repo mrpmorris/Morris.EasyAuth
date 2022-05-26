@@ -1,21 +1,28 @@
 ﻿using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
+using System.Net.Http;
 
 namespace Morris.BasicAuth.Blazor.Web.Client;
 
 public class BasicAuthBuilder
 {
 	private readonly IServiceCollection Services;
-	private readonly string? BaseAddress;
+	private readonly string BaseAddress;
+	private bool ShouldRegisterDefaultHttpClient = true;
 	private ClientAuthOptions? Options;
 	private Type? PrincipalDeserializerType;
 
-	public BasicAuthBuilder(IServiceCollection services, string? baseAddress)
+	public BasicAuthBuilder(IServiceCollection services, string baseAddress)
 	{
 		Services = services ?? throw new ArgumentNullException(nameof(services));
-		BaseAddress = baseAddress;
+		BaseAddress = baseAddress ?? throw new ArgumentNullException(nameof(baseAddress));
+	}
+
+	public BasicAuthBuilder DoNotRegisterDefaltHttpClient()
+	{
+		ShouldRegisterDefaultHttpClient = false;
+		return this;
 	}
 
 	public BasicAuthBuilder UseDeserializer<T>()
@@ -34,10 +41,10 @@ public class BasicAuthBuilder
 	internal void Build()
 	{
 		Services.AddScoped(
-			typeof(IPrincipalDeserializer), 
+			typeof(IPrincipalDeserializer),
 			PrincipalDeserializerType ?? typeof(PrincipalJsonDeserializer));
 
-		Services.AddScoped<AuthorizingMessageHandler>();
+		Services.AddTransient<AuthorizingMessageHandler>();
 		Services.AddScoped<AuthenticationStateProvider, BasicAuthenticationStateProvider>();
 
 		ClientAuthOptions options = Options ?? CreateDefaultOptions();
@@ -45,12 +52,10 @@ public class BasicAuthBuilder
 
 		// Client to get user claims
 		Services.AddHttpClient<NonRedirectingHttpClient>(
-			NonRedirectingHttpClient.HttpClientId,
-			x =>
-			{
-				if (BaseAddress is not null)
-					x.BaseAddress = new Uri(BaseAddress!);
-			});
+			NonRedirectingHttpClient.HttpClientId, x => x.BaseAddress = new Uri(BaseAddress!));
+
+		if (ShouldRegisterDefaultHttpClient)
+			RegisterDefaultHttpClient();
 	}
 
 	private ClientAuthOptions CreateDefaultOptions()
@@ -59,5 +64,21 @@ public class BasicAuthBuilder
 			signInUrlTemplate: null,
 			getUserClaimsUrl: null);
 		return options;
+	}
+
+	private void RegisterDefaultHttpClient()
+	{
+		Services.AddScoped(sp =>
+		{
+			var handler = sp.GetRequiredService<AuthorizingMessageHandler>();
+			handler.InnerHandler = new HttpClientHandler();
+			var result = new HttpClient(handler) { BaseAddress = new Uri(BaseAddress) };
+			return result;
+		});
+		Services
+			.AddHttpClient(
+				name: "",
+				configureClient: client => client.BaseAddress = new Uri(BaseAddress))
+			.AddHttpMessageHandler<AuthorizingMessageHandler>();
 	}
 }
