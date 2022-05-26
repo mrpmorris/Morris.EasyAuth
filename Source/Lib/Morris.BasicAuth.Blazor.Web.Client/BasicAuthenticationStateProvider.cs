@@ -33,7 +33,7 @@ public class BasicAuthenticationStateProvider : AuthenticationStateProvider
 
 	public override async Task<AuthenticationState> GetAuthenticationStateAsync()
 	{
-		var httpClient = HttpClientFactory.CreateClient(AuthHttpClient.HttpClientId);
+		var httpClient = HttpClientFactory.CreateClient(NonRedirectingHttpClient.HttpClientId);
 		var request = new HttpRequestMessage(HttpMethod.Get, AuthOptions.GetUserIdentityUrl);
 		var response = await httpClient.SendAsync(request);
 

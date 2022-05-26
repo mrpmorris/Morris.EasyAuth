@@ -7,16 +7,15 @@ using System.Web;
 
 namespace Morris.BasicAuth.Blazor.Web.Client;
 
-public class AuthorizationMessageHandlerWithPageRedirect : HttpClientHandler
+public class AuthorizingMessageHandler : DelegatingHandler
 {
 	private readonly NavigationManager NavigationManager;
 	private readonly ClientAuthOptions AuthOptions;
 
-	public AuthorizationMessageHandlerWithPageRedirect(
+	public AuthorizingMessageHandler(
 		NavigationManager navigationManager,
 		ClientAuthOptions authOptions)
 	{
-		AllowAutoRedirect = false;
 		NavigationManager = navigationManager ?? throw new ArgumentNullException(nameof(navigationManager));
 		AuthOptions = authOptions ?? throw new ArgumentNullException(nameof(authOptions));
 	}

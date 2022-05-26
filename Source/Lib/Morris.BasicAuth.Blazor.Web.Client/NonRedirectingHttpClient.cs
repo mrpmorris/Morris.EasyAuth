@@ -2,11 +2,11 @@
 
 namespace Morris.BasicAuth.Blazor.Web.Client;
 
-public class AuthHttpClient : HttpClient
+internal class NonRedirectingHttpClient : HttpClient
 {
 	internal const string HttpClientId = "Morris.BasicAuth.Blazor.Web.Client.AuthHttpClient";
 
-	public AuthHttpClient() : base(CreateHandler())
+	public NonRedirectingHttpClient() : base(CreateHandler())
 	{
 	}
 
