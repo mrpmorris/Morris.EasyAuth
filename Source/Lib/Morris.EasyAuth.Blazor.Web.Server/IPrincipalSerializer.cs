@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Claims;
 
-namespace Morris.BasicAuth.Blazor.Web.Server;
+namespace Morris.EasyAuth.Blazor.Web.Server;
 
 public interface IPrincipalSerializer
 {

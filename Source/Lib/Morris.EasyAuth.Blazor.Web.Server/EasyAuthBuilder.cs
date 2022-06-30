@@ -1,26 +1,26 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Morris.BasicAuth.Blazor.Web.Server;
+namespace Morris.EasyAuth.Blazor.Web.Server;
 
-public class BasicAuthBuilder
+public class EasyAuthBuilder
 {
 	private readonly IServiceCollection Services;
 	private ServerAuthOptions? Options;
 	private Type? PrincipalSerializerType;
 
-	public BasicAuthBuilder(IServiceCollection services, string? baseAddress)
+	public EasyAuthBuilder(IServiceCollection services, string? baseAddress)
 	{
 		Services = services ?? throw new ArgumentNullException(nameof(services));
 	}
 
-	public BasicAuthBuilder WithOptions(ServerAuthOptions options)
+	public EasyAuthBuilder WithOptions(ServerAuthOptions options)
 	{
 		Options = options ?? throw new ArgumentNullException(nameof(options));
 		return this;
 	}
 
-	public BasicAuthBuilder UseSerializer<T>()
+	public EasyAuthBuilder UseSerializer<T>()
 		where T : class, IPrincipalSerializer
 	{
 		PrincipalSerializerType = typeof(T);

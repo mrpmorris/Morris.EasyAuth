@@ -13,9 +13,9 @@
 		<PackageLicenseFile></PackageLicenseFile>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
-		<PackageProjectUrl>https://github.com/mrpmorris/Morris.BasicAuth</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/mrpmorris/Morris.EasyAuth</PackageProjectUrl>
 		<PackageIconUrl />
-		<RepositoryUrl>https://github.com/mrpmorris/Morris.BasicAuth</RepositoryUrl>
+		<RepositoryUrl>https://github.com/mrpmorris/Morris.EasyAuth</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
 

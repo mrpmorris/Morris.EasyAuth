@@ -1,4 +1,4 @@
-# Morris.BasicAuth - documentation
+# Morris.EasyAuth - documentation
 ![](./../Images/small-logo.png)
 
 ## Stuff

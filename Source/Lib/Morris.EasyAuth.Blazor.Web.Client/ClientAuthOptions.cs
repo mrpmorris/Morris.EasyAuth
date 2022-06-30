@@ -1,4 +1,4 @@
-﻿namespace Morris.BasicAuth.Blazor.Web.Client;
+﻿namespace Morris.EasyAuth.Blazor.Web.Client;
 
 public class ClientAuthOptions
 {

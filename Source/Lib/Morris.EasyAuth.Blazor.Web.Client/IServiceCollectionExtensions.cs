@@ -1,22 +1,22 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Morris.BasicAuth.Blazor.Web.Client;
+namespace Morris.EasyAuth.Blazor.Web.Client;
 
 public static class IServiceCollectionExtensions
 {
-	public static IServiceCollection AddBasicAuth(
+	public static IServiceCollection AddEasyAuth(
 		this IServiceCollection services,
 		string baseAddress,
-		Action<BasicAuthBuilder>? builder = null)
+		Action<EasyAuthBuilder>? builder = null)
 	{
 		if (baseAddress is null)
 			throw new ArgumentNullException(nameof(baseAddress));
 
-		var basicAuthBuilder = new BasicAuthBuilder(services, baseAddress);
+		var EasyAuthBuilder = new EasyAuthBuilder(services, baseAddress);
 		if (builder is not null)
-			builder(basicAuthBuilder);
-		basicAuthBuilder.Build();
+			builder(EasyAuthBuilder);
+		EasyAuthBuilder.Build();
 
 		return services;
 	}

@@ -1,10 +1,10 @@
 ﻿using System.Net.Http;
 
-namespace Morris.BasicAuth.Blazor.Web.Client;
+namespace Morris.EasyAuth.Blazor.Web.Client;
 
 internal class NonRedirectingHttpClient : HttpClient
 {
-	internal const string HttpClientId = "Morris.BasicAuth.Blazor.Web.Client.AuthHttpClient";
+	internal const string HttpClientId = "Morris.EasyAuth.Blazor.Web.Client.AuthHttpClient";
 
 	public NonRedirectingHttpClient() : base(CreateHandler())
 	{

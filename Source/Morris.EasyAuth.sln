@@ -23,11 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{AFF6160A-A
 		..\Docs\releases.md = ..\Docs\releases.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morris.BasicAuth", "Lib\Morris.BasicAuth\Morris.BasicAuth.csproj", "{DC168D3B-671D-4CC0-BA51-8C089C695672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morris.EasyAuth", "Lib\Morris.EasyAuth\Morris.EasyAuth.csproj", "{DC168D3B-671D-4CC0-BA51-8C089C695672}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morris.BasicAuth.Blazor.Web.Client", "Lib\Morris.BasicAuth.Blazor.Web.Client\Morris.BasicAuth.Blazor.Web.Client.csproj", "{9D4C75B9-8C7B-485B-871C-F48CEFD8E8CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morris.EasyAuth.Blazor.Web.Client", "Lib\Morris.EasyAuth.Blazor.Web.Client\Morris.EasyAuth.Blazor.Web.Client.csproj", "{9D4C75B9-8C7B-485B-871C-F48CEFD8E8CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morris.BasicAuth.Blazor.Web.Server", "Lib\Morris.BasicAuth.Blazor.Web.Server\Morris.BasicAuth.Blazor.Web.Server.csproj", "{303D8075-7147-438F-982D-0D4FEB3C8B55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morris.EasyAuth.Blazor.Web.Server", "Lib\Morris.EasyAuth.Blazor.Web.Server\Morris.EasyAuth.Blazor.Web.Server.csproj", "{303D8075-7147-438F-982D-0D4FEB3C8B55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

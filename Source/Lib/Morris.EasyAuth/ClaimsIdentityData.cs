@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 
-namespace Morris.BasicAuth;
+namespace Morris.EasyAuth;
 
 public class ClaimsIdentityData
 {

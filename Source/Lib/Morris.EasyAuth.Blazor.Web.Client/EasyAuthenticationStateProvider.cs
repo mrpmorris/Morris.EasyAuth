@@ -5,23 +5,23 @@ using System.Security.Claims;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Morris.BasicAuth.Blazor.Web.Client;
+namespace Morris.EasyAuth.Blazor.Web.Client;
 
-internal class BasicAuthenticationStateProvider : AuthenticationStateProvider
+internal class EasyAuthenticationStateProvider : AuthenticationStateProvider
 {
 	private static readonly AuthenticationState Anonymous;
 	private readonly ClientAuthOptions AuthOptions;
 	private readonly IPrincipalDeserializer PrincipalDeserializer;
 	private readonly IHttpClientFactory HttpClientFactory;
 
-	static BasicAuthenticationStateProvider()
+	static EasyAuthenticationStateProvider()
 	{
 		var anonymousIdentity = new ClaimsIdentity();
 		var anonymousUser = new ClaimsPrincipal(anonymousIdentity);
 		Anonymous = new AuthenticationState(anonymousUser);
 	}
 
-	public BasicAuthenticationStateProvider(
+	public EasyAuthenticationStateProvider(
 		ClientAuthOptions authOptions,
 		IPrincipalDeserializer principalDeserializer,
 		IHttpClientFactory httpClientFactory)

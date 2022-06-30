@@ -1,1 +1,1 @@
-dotnet build Source\Morris.BasicAuth.sln -c Release
+dotnet build Source\Morris.EasyAuth.sln -c Release

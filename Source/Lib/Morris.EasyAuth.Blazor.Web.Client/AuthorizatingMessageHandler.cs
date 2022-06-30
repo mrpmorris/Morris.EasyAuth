@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Morris.BasicAuth.Blazor.Web.Client;
+namespace Morris.EasyAuth.Blazor.Web.Client;
 
 public class AuthorizingMessageHandler : DelegatingHandler
 {

@@ -3,9 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net.Http;
 
-namespace Morris.BasicAuth.Blazor.Web.Client;
+namespace Morris.EasyAuth.Blazor.Web.Client;
 
-public class BasicAuthBuilder
+public class EasyAuthBuilder
 {
 	private readonly IServiceCollection Services;
 	private readonly string BaseAddress;
@@ -13,26 +13,26 @@ public class BasicAuthBuilder
 	private ClientAuthOptions? Options;
 	private Type? PrincipalDeserializerType;
 
-	public BasicAuthBuilder(IServiceCollection services, string baseAddress)
+	public EasyAuthBuilder(IServiceCollection services, string baseAddress)
 	{
 		Services = services ?? throw new ArgumentNullException(nameof(services));
 		BaseAddress = baseAddress ?? throw new ArgumentNullException(nameof(baseAddress));
 	}
 
-	public BasicAuthBuilder DoNotRegisterDefaltHttpClient()
+	public EasyAuthBuilder DoNotRegisterDefaltHttpClient()
 	{
 		ShouldRegisterDefaultHttpClient = false;
 		return this;
 	}
 
-	public BasicAuthBuilder UseDeserializer<T>()
+	public EasyAuthBuilder UseDeserializer<T>()
 		where T : class, IPrincipalDeserializer
 	{
 		PrincipalDeserializerType = typeof(T);
 		return this;
 	}
 
-	public BasicAuthBuilder WithOptions(ClientAuthOptions options)
+	public EasyAuthBuilder WithOptions(ClientAuthOptions options)
 	{
 		Options = options ?? throw new ArgumentNullException(nameof(options));
 		return this;
@@ -45,7 +45,7 @@ public class BasicAuthBuilder
 			PrincipalDeserializerType ?? typeof(PrincipalJsonDeserializer));
 
 		Services.AddTransient<AuthorizingMessageHandler>();
-		Services.AddScoped<AuthenticationStateProvider, BasicAuthenticationStateProvider>();
+		Services.AddScoped<AuthenticationStateProvider, EasyAuthenticationStateProvider>();
 
 		ClientAuthOptions options = Options ?? CreateDefaultOptions();
 		Services.AddScoped(sp => options!);

@@ -28,7 +28,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Morris.BasicAuth\Morris.BasicAuth.csproj" />
+		<ProjectReference Include="..\Morris.EasyAuth\Morris.EasyAuth.csproj" />
 	</ItemGroup>
 
 </Project>

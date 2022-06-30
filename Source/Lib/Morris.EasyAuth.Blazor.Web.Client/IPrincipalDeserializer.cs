@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace Morris.BasicAuth.Blazor.Web.Client;
+namespace Morris.EasyAuth.Blazor.Web.Client;
 
 public interface IPrincipalDeserializer
 {

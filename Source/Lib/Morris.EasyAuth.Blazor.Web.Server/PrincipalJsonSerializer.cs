@@ -2,7 +2,7 @@
 using System.Security.Claims;
 using System.Text.Json;
 
-namespace Morris.BasicAuth.Blazor.Web.Server;
+namespace Morris.EasyAuth.Blazor.Web.Server;
 
 internal class PrincipalJsonSerializer : IPrincipalSerializer
 {

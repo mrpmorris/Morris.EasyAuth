@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 
-namespace Morris.BasicAuth;
+namespace Morris.EasyAuth;
 
 public class ClaimData
 {
