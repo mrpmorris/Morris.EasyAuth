@@ -1,5 +1,8 @@
 # Releases
 
+## New in 0.3
+ * Renamed to Morris.EasyAuth
+
 ## New in 0.2
  * Auto register so that injecting `HttpClient` or asking for an instance via
     `IHttpClientFactory` with no name returns a client that will redirect to the
