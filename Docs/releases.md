@@ -1,5 +1,9 @@
 # Releases
 
+## New in 0.4
+* Added support for .NET 7
+* Removed frameworks no longer supported by Microsoft
+
 ## New in 0.3
  * Renamed to Morris.EasyAuth
 
